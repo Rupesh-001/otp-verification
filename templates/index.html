@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OTP Generator & Verification</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="card">
+
+            <div class="logo">
+                🔐
+            </div>
+
+            <h1>OTP Verification</h1>
+
+            <p class="subtitle">
+                Verify your phone number using a secure OTP.
+            </p>
+
+
+            <!-- PHONE NUMBER -->
+
+            <section id="phoneSection">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="+919876543210"
+                    autocomplete="tel"
+                >
+
+                <button id="sendOtpBtn">
+                    Generate OTP
+                </button>
+
+            </section>
+
+
+            <!-- OTP -->
+
+            <section
+                id="otpSection"
+                class="hidden"
+            >
+
+                <div class="phone-display">
+
+                    OTP generated for
+
+                    <strong id="phoneDisplay"></strong>
+
+                </div>
+
+
+                <!-- DEMO OTP -->
+
+                <div class="demo-box">
+
+                    <span>Demo OTP</span>
+
+                    <strong id="demoOtp">
+                        ------
+                    </strong>
+
+                </div>
+
+
+                <!-- TIMER -->
+
+                <div class="timer">
+
+                    OTP expires in
+
+                    <strong id="timer">
+                        60
+                    </strong>
+
+                    seconds
+
+                </div>
+
+
+                <!-- OTP INPUT -->
+
+                <label>
+                    Enter OTP
+                </label>
+
+                <div class="otp-container">
+
+                    <input
+                        class="otp-input"
+                        maxlength="1"
+                        inputmode="numeric"
+                    >
+
+                    <input
+                        class="otp-input"
+                        maxlength="1"
+                        inputmode="numeric"
+                    >
+
+                    <input
+                        class="otp-input"
+                        maxlength="1"
+                        inputmode="numeric"
+                    >
+
+                    <input
+                        class="otp-input"
+                        maxlength="1"
+                        inputmode="numeric"
+                    >
+
+                    <input
+                        class="otp-input"
+                        maxlength="1"
+                        inputmode="numeric"
+                    >
+
+                    <input
+                        class="otp-input"
+                        maxlength="1"
+                        inputmode="numeric"
+                    >
+
+                </div>
+
+
+                <button id="verifyBtn">
+                    Verify OTP
+                </button>
+
+
+                <button
+                    id="resendBtn"
+                    class="secondary"
+                    disabled
+                >
+                    Resend OTP
+                </button>
+
+
+                <button
+                    id="changeNumberBtn"
+                    class="link-button"
+                >
+                    Change Phone Number
+                </button>
+
+            </section>
+
+
+            <!-- SUCCESS -->
+
+            <section
+                id="successSection"
+                class="hidden success-section"
+            >
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h2>
+                    Verified Successfully!
+                </h2>
+
+                <p>
+                    Your phone number has been verified.
+                </p>
+
+                <button id="startAgainBtn">
+                    Verify Another Number
+                </button>
+
+            </section>
+
+
+            <!-- MESSAGE -->
+
+            <div id="message"></div>
+
+        </div>
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>
